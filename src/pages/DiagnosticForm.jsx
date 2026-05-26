@@ -279,7 +279,7 @@ export default function DiagnosticForm() {
       fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ to: userEmail, result }),
+        body: JSON.stringify({ to: userEmail, result, answers }),
       }).catch(e => console.error('Email send failed:', e))
     }
 
