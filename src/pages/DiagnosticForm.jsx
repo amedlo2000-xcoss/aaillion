@@ -9,6 +9,16 @@ import { analyzeWorldviewDiagnosis, mockWorldviewAnalysis } from '../lib/openai'
 // ── Question definitions ──────────────────────────────────────────────────────
 const STEPS = [
   {
+    id: 'email', q: 'START', type: 'email',
+    title: 'メールアドレスを入力',
+    desc: '診断結果をメールでお届けします。診断完了後、入力のアドレスに結果レポートが届きます。',
+    icon: '◉', color: '#00D1FF',
+    hasSelect: false,
+    textLabel: 'メールアドレス（必須）',
+    minChars: 5, maxChars: 100, rows: 1,
+    placeholder: 'your@email.com',
+  },
+  {
     id: 'q01', q: 'Q0-1', title: '現在の業種',
     desc: '現在あなたが関わっている業界を選んでください。',
     icon: '▣', color: '#00D1FF',
@@ -183,6 +193,7 @@ export default function DiagnosticForm() {
   const charOk    = charCount >= current.minChars
 
   const canProceed = () => {
+    if (current.type === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(textVal)
     if (current.hasSelect) return !!selectVal
     return charCount >= 20
   }
@@ -261,6 +272,16 @@ export default function DiagnosticForm() {
     if (dbError) console.error('Supabase save error:', dbError.message)
 
     await new Promise(r => setTimeout(r, 700))
+
+    // Send email (non-blocking — don't let failure block navigation)
+    const userEmail = answers.email_text
+    if (userEmail) {
+      fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ to: userEmail, result }),
+      }).catch(e => console.error('Email send failed:', e))
+    }
 
     setDiagnosticResult({ ...result, aiError: err, answers })
     setAnalyzing(false)
@@ -393,39 +414,67 @@ export default function DiagnosticForm() {
                 </div>
               )}
 
-              {/* Textarea */}
+              {/* Input / Textarea */}
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-xs text-white/35 uppercase tracking-wider">
                     {current.textLabel}
-                    {current.hasSelect && <span className="ml-1.5 normal-case tracking-normal text-white/20">（任意）</span>}
+                    {current.hasSelect && !current.type && <span className="ml-1.5 normal-case tracking-normal text-white/20">（任意）</span>}
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs" style={{ color: charColor }}>
-                    {charOk && <span>✓</span>}
-                    <span className="font-medium">{charCount.toLocaleString()}</span>
-                    {current.hasSelect
-                      ? <span className="text-white/20">/ {current.maxChars}文字</span>
-                      : <span className="text-white/20">/ 20〜{current.maxChars}文字</span>
-                    }
-                  </div>
+                  {current.type !== 'email' && (
+                    <div className="flex items-center gap-1.5 text-xs" style={{ color: charColor }}>
+                      {charOk && <span>✓</span>}
+                      <span className="font-medium">{charCount.toLocaleString()}</span>
+                      {current.hasSelect
+                        ? <span className="text-white/20">/ {current.maxChars}文字</span>
+                        : <span className="text-white/20">/ 20〜{current.maxChars}文字</span>
+                      }
+                    </div>
+                  )}
                 </div>
-                <textarea
-                  value={textVal}
-                  onChange={e => setText(e.target.value)}
-                  placeholder={current.placeholder}
-                  rows={current.rows}
-                  maxLength={current.maxChars}
-                  className="w-full bg-white/4 border text-white placeholder-white/15 rounded-xl px-4 py-3 outline-none transition-all duration-300 text-sm resize-none leading-relaxed"
-                  style={{
-                    borderColor: charCount > 0
-                      ? charOk ? `${current.color}40` : 'rgba(245,158,11,0.3)'
-                      : 'rgba(255,255,255,0.1)',
-                  }}
-                />
-                {!current.hasSelect && !charOk && charCount > 0 && (
-                  <p className="text-[#f59e0b] text-xs mt-1.5">
-                    あと {20 - charCount} 文字以上書いてください
-                  </p>
+
+                {current.type === 'email' ? (
+                  <>
+                    <input
+                      type="email"
+                      value={textVal}
+                      onChange={e => setText(e.target.value)}
+                      placeholder={current.placeholder}
+                      className="w-full bg-white/4 border text-white placeholder-white/15 rounded-xl px-4 py-3.5 outline-none transition-all duration-300 text-sm"
+                      style={{
+                        borderColor: textVal
+                          ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(textVal) ? `${current.color}50` : 'rgba(245,158,11,0.4)'
+                          : 'rgba(255,255,255,0.1)',
+                      }}
+                    />
+                    {textVal && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(textVal) && (
+                      <p className="text-[#f59e0b] text-xs mt-1.5">正しいメールアドレスを入力してください</p>
+                    )}
+                    {textVal && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(textVal) && (
+                      <p className="text-[#34d399] text-xs mt-1.5">✓ 診断結果をこのアドレスに送信します</p>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <textarea
+                      value={textVal}
+                      onChange={e => setText(e.target.value)}
+                      placeholder={current.placeholder}
+                      rows={current.rows}
+                      maxLength={current.maxChars}
+                      className="w-full bg-white/4 border text-white placeholder-white/15 rounded-xl px-4 py-3 outline-none transition-all duration-300 text-sm resize-none leading-relaxed"
+                      style={{
+                        borderColor: charCount > 0
+                          ? charOk ? `${current.color}40` : 'rgba(245,158,11,0.3)'
+                          : 'rgba(255,255,255,0.1)',
+                      }}
+                    />
+                    {!current.hasSelect && !charOk && charCount > 0 && (
+                      <p className="text-[#f59e0b] text-xs mt-1.5">
+                        あと {20 - charCount} 文字以上書いてください
+                      </p>
+                    )}
+                  </>
                 )}
               </div>
 
