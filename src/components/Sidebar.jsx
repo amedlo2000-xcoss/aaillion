@@ -60,9 +60,7 @@ export default function Sidebar() {
           whileHover={{ scale: 1.05 }}
           className="flex items-center gap-3"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00D1FF] to-[#8B5CF6] flex items-center justify-center text-white font-bold text-sm glow-blue tracking-tighter">
-            AA
-          </div>
+          <img src="/logo.png" alt="AAillion" className="w-10 h-10 rounded-xl object-contain" />
           <div>
             <div className="text-white font-bold text-lg tracking-wider">AAillion</div>
             <div className="text-white/40 text-xs">v2.0 NEURAL</div>

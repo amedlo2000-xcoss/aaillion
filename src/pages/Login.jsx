@@ -58,8 +58,8 @@ export default function Login() {
           transition={{ delay: 0.2 }}
           className="text-center mb-8"
         >
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00D1FF] to-[#8B5CF6] mb-4 glow-blue float">
-            <span className="text-3xl font-black text-white">F</span>
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-4 float">
+            <img src="/logo.png" alt="AAillion" className="w-20 h-20 rounded-2xl object-contain" />
           </div>
           <h1 className="text-4xl font-black text-white tracking-tight">
             AAillion

@@ -40,6 +40,9 @@ export default function SimpleTop() {
           transition={{ duration: 0.5 }}
           style={{ textAlign: 'center', marginBottom: 40 }}
         >
+          <div style={{ marginBottom: 16 }}>
+            <img src="/logo.png" alt="AAillion" style={{ width: 72, height: 72, borderRadius: 16, objectFit: 'contain' }} />
+          </div>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 16, padding: '6px 16px', borderRadius: 999, border: '1px solid rgba(0,209,255,0.3)', background: 'rgba(0,209,255,0.08)' }}>
             <span style={{ color: '#00D1FF', fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', fontWeight: 700 }}>◈ AI世界観市場診断OS</span>
           </div>
