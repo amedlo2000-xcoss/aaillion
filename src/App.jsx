@@ -11,6 +11,9 @@ import CrowdfundingAnalysis from './pages/CrowdfundingAnalysis'
 import FutureSimulation from './pages/FutureSimulation'
 import AdminPanel from './pages/AdminPanel'
 import DiagnosticHistory from './pages/DiagnosticHistory'
+import SimpleTop from './pages/SimpleTop'
+import SimpleForm from './pages/SimpleForm'
+import SimpleResult from './pages/SimpleResult'
 
 function App() {
   useEffect(() => { document.title = 'AAillion' }, [])
@@ -31,6 +34,11 @@ function App() {
           <Route path="/future-sim" element={<FutureSimulation />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/history" element={<DiagnosticHistory />} />
+          {/* スマホ向けシンプル診断フロー */}
+          <Route path="/simple" element={<SimpleTop />} />
+          <Route path="/simple/form" element={<SimpleForm />} />
+          <Route path="/simple/result" element={<SimpleResult />} />
+          <Route path="/s" element={<Navigate to="/simple" replace />} />
         </Routes>
       </BrowserRouter>
     </AppProvider>
