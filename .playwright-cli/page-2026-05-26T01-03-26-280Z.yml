@@ -1,0 +1,79 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e7]:
+      - generic [ref=e8]: F
+      - generic [ref=e9]:
+        - generic [ref=e10]: AAillion
+        - generic [ref=e11]: v2.0 NEURAL
+    - generic [ref=e15]: SYSTEM ONLINE
+    - navigation [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: CORE
+        - link "⬡ ダッシュボード" [ref=e19] [cursor=pointer]:
+          - /url: /dashboard
+          - generic [ref=e20]: ⬡
+          - generic [ref=e21]: ダッシュボード
+        - link "◈ 診断フォーム" [ref=e22] [cursor=pointer]:
+          - /url: /diagnostic
+          - generic [ref=e24]: ◈
+          - generic [ref=e25]: 診断フォーム
+        - link "◉ 診断結果" [ref=e26] [cursor=pointer]:
+          - /url: /result
+          - generic [ref=e27]: ◉
+          - generic [ref=e28]: 診断結果
+      - generic [ref=e29]:
+        - generic [ref=e30]: ANALYSIS
+        - link "▣ 市場分析" [ref=e31] [cursor=pointer]:
+          - /url: /market
+          - generic [ref=e32]: ▣
+          - generic [ref=e33]: 市場分析
+        - link "◫ MVP費シミュ" [ref=e34] [cursor=pointer]:
+          - /url: /mvp-sim
+          - generic [ref=e35]: ◫
+          - generic [ref=e36]: MVP費シミュ
+        - link "◬ クラファン分析" [ref=e37] [cursor=pointer]:
+          - /url: /crowdfunding
+          - generic [ref=e38]: ◬
+          - generic [ref=e39]: クラファン分析
+      - generic [ref=e40]:
+        - generic [ref=e41]: STRATEGY
+        - link "◭ 未来シミュレーション" [ref=e42] [cursor=pointer]:
+          - /url: /future-sim
+          - generic [ref=e43]: ◭
+          - generic [ref=e44]: 未来シミュレーション
+        - link "◲ 管理画面" [ref=e45] [cursor=pointer]:
+          - /url: /admin
+          - generic [ref=e46]: ◲
+          - generic [ref=e47]: 管理画面
+      - generic [ref=e48]:
+        - generic [ref=e49]: DATA
+        - link "◫ 診断履歴 (DB)" [ref=e50] [cursor=pointer]:
+          - /url: /history
+          - generic [ref=e51]: ◫
+          - generic [ref=e52]: 診断履歴 (DB)
+    - button "⏻ ログアウト" [ref=e55]:
+      - generic [ref=e56]: ⏻
+      - generic [ref=e57]: ログアウト
+  - main [ref=e58]:
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - generic [ref=e64] [cursor=pointer]: ✓
+        - generic [ref=e66] [cursor=pointer]: "2"
+        - generic [ref=e68] [cursor=pointer]: "3"
+        - generic [ref=e70] [cursor=pointer]: "4"
+        - generic [ref=e72] [cursor=pointer]: "5"
+        - generic [ref=e74] [cursor=pointer]: "6"
+        - generic [ref=e76] [cursor=pointer]: "7"
+        - generic [ref=e78] [cursor=pointer]: "8"
+        - generic [ref=e80] [cursor=pointer]: "9"
+      - generic [ref=e102]:
+        - generic [ref=e104]:
+          - generic [ref=e105]: ◈
+          - generic [ref=e106]:
+            - generic [ref=e107]: Step 2 / 9 · アイデア
+            - heading "アプリ / サービスのアイデアを説明してください" [level=2] [ref=e108]
+        - 'textbox "例: AIを使った個人の健康管理アプリ。毎日の食事・運動データを収集し、パーソナライズされた健康アドバイスを提供する..." [ref=e109]'
+        - generic [ref=e110]:
+          - button "← 前へ" [ref=e111]
+          - generic [ref=e112]: 2 / 9
+          - button "次へ →" [disabled] [ref=e113]

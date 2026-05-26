@@ -1,0 +1,153 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e49]:
+    - complementary [ref=e50]:
+      - generic [ref=e53]:
+        - generic [ref=e54]: F
+        - generic [ref=e55]:
+          - generic [ref=e56]: AAillion
+          - generic [ref=e57]: v2.0 NEURAL
+      - generic [ref=e61]: SYSTEM ONLINE
+      - navigation [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]: CORE
+          - link "⬡ ダッシュボード" [ref=e65] [cursor=pointer]:
+            - /url: /dashboard
+            - generic [ref=e67]: ⬡
+            - generic [ref=e68]: ダッシュボード
+          - link "◈ 診断フォーム" [ref=e69] [cursor=pointer]:
+            - /url: /diagnostic
+            - generic [ref=e70]: ◈
+            - generic [ref=e71]: 診断フォーム
+          - link "◉ 診断結果" [ref=e72] [cursor=pointer]:
+            - /url: /result
+            - generic [ref=e73]: ◉
+            - generic [ref=e74]: 診断結果
+        - generic [ref=e75]:
+          - generic [ref=e76]: ANALYSIS
+          - link "▣ 市場分析" [ref=e77] [cursor=pointer]:
+            - /url: /market
+            - generic [ref=e78]: ▣
+            - generic [ref=e79]: 市場分析
+          - link "◫ MVP費シミュ" [ref=e80] [cursor=pointer]:
+            - /url: /mvp-sim
+            - generic [ref=e81]: ◫
+            - generic [ref=e82]: MVP費シミュ
+          - link "◬ クラファン分析" [ref=e83] [cursor=pointer]:
+            - /url: /crowdfunding
+            - generic [ref=e84]: ◬
+            - generic [ref=e85]: クラファン分析
+        - generic [ref=e86]:
+          - generic [ref=e87]: STRATEGY
+          - link "◭ 未来シミュレーション" [ref=e88] [cursor=pointer]:
+            - /url: /future-sim
+            - generic [ref=e89]: ◭
+            - generic [ref=e90]: 未来シミュレーション
+          - link "◲ 管理画面" [ref=e91] [cursor=pointer]:
+            - /url: /admin
+            - generic [ref=e92]: ◲
+            - generic [ref=e93]: 管理画面
+        - generic [ref=e94]:
+          - generic [ref=e95]: DATA
+          - link "◫ 診断履歴 (DB)" [ref=e96] [cursor=pointer]:
+            - /url: /history
+            - generic [ref=e97]: ◫
+            - generic [ref=e98]: 診断履歴 (DB)
+      - button "⏻ ログアウト" [ref=e101]:
+        - generic [ref=e102]: ⏻
+        - generic [ref=e103]: ログアウト
+    - main [ref=e104]:
+      - generic [ref=e105]:
+        - generic [ref=e106]:
+          - paragraph [ref=e107]: Welcome back
+          - heading "test_" [level=1] [ref=e108]
+        - button "＋ 新規診断" [ref=e109]
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - generic [ref=e114]: ◈
+          - generic [ref=e115]: 85pt
+          - generic [ref=e116]: 総合スコア
+          - generic [ref=e117]:
+            - generic [ref=e118]: ▲
+            - generic [ref=e119]: 12%
+            - generic [ref=e120]: vs 先月
+        - generic [ref=e121]:
+          - generic [ref=e124]: ◉
+          - generic [ref=e125]: 72%
+          - generic [ref=e126]: 市場ポテンシャル
+          - generic [ref=e127]:
+            - generic [ref=e128]: ▲
+            - generic [ref=e129]: 8%
+            - generic [ref=e130]: vs 先月
+        - generic [ref=e131]:
+          - generic [ref=e134]: ⬡
+          - generic [ref=e135]: 90pt
+          - generic [ref=e136]: AI適合スコア
+          - generic [ref=e137]:
+            - generic [ref=e138]: ▲
+            - generic [ref=e139]: 18%
+            - generic [ref=e140]: vs 先月
+        - generic [ref=e141]:
+          - generic [ref=e144]: ▣
+          - generic [ref=e145]: 3回
+          - generic [ref=e146]: 診断回数
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - generic [ref=e149]:
+            - generic [ref=e150]: ◈
+            - heading "能力レーダー" [level=2] [ref=e151]
+          - application [ref=e154]:
+            - generic [ref=e170]:
+              - generic [ref=e172]: 市場性
+              - generic [ref=e175]: 革新性
+              - generic [ref=e178]: 収益性
+              - generic [ref=e180]: AI活用
+              - generic [ref=e183]: SNS拡散
+              - generic [ref=e186]: コミュニティ
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - generic [ref=e189]: ◉
+            - heading "スコア推移" [level=2] [ref=e190]
+          - application [ref=e193]:
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - generic [ref=e208]: 1月
+                - generic [ref=e210]: 2月
+                - generic [ref=e212]: 3月
+                - generic [ref=e214]: 4月
+                - generic [ref=e216]: 5月
+                - generic [ref=e218]: 6月
+                - generic [ref=e220]: 7月
+              - generic [ref=e221]:
+                - generic [ref=e223]: "50"
+                - generic [ref=e225]: "65"
+                - generic [ref=e227]: "80"
+                - generic [ref=e229]: "100"
+      - generic [ref=e230]:
+        - generic [ref=e231]:
+          - generic [ref=e232]:
+            - generic [ref=e233]: ▣
+            - heading "直近の診断履歴" [level=2] [ref=e234]
+          - button "全て見る →" [ref=e235]
+        - generic [ref=e236]:
+          - generic [ref=e237] [cursor=pointer]:
+            - generic [ref=e238]:
+              - generic [ref=e239]: "85"
+              - generic [ref=e240]:
+                - generic [ref=e241]: AIヘルスケアアプリ
+                - generic [ref=e242]: ヘルスケア · 2026-05-20
+            - generic [ref=e246]: →
+          - generic [ref=e247] [cursor=pointer]:
+            - generic [ref=e248]:
+              - generic [ref=e249]: "62"
+              - generic [ref=e250]:
+                - generic [ref=e251]: NFTマーケット
+                - generic [ref=e252]: Web3 · 2026-05-15
+            - generic [ref=e256]: →
+          - generic [ref=e257] [cursor=pointer]:
+            - generic [ref=e258]:
+              - generic [ref=e259]: "78"
+              - generic [ref=e260]:
+                - generic [ref=e261]: B2B SaaSツール
+                - generic [ref=e262]: SaaS · 2026-05-10
+            - generic [ref=e266]: →
+  - generic [ref=e267]: "50"

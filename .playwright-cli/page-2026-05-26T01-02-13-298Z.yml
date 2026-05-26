@@ -1,0 +1,20 @@
+- generic [ref=e24]:
+  - generic [ref=e25]:
+    - generic [ref=e27]: F
+    - heading "AAillion" [level=1] [ref=e28]
+    - paragraph [ref=e29]: Neural Business Analyzer
+  - generic [ref=e30]:
+    - heading "▶システムログイン" [level=2] [ref=e32]
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]: Email / ID
+        - generic [ref=e36]:
+          - textbox "user@aaillion.ai" [ref=e37]
+          - generic [ref=e38]: ✓
+      - generic [ref=e39]:
+        - generic [ref=e40]: Access Key
+        - textbox "••••••••" [ref=e42]
+      - button "SYSTEM ACCESS →" [ref=e43]: SYSTEM ACCESS →
+    - generic [ref=e45]:
+      - generic [ref=e46]: v2.0.0 NEURAL
+      - generic [ref=e47]: All systems nominal
